@@ -13,7 +13,7 @@ const Cryptocurrencies = () => {
   //Redux toolKit provides the below hook automaitically when calling the createAPI module
   //giving option to look for the connected wallet account or for the given user account
   const { data: cryptosList, isLoading } = useGetCryptoQuery(
-    searchToken ?? connectedAccount
+    searchToken ? searchToken : connectedAccount
   );
 
   const [cryptos, setCryptos] = React.useState([]);
